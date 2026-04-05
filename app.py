@@ -16,11 +16,18 @@ class App(ctk.CTk):
         self.geometry("1300x800")
         self.configure(fg_color="#0d1117")
         try:
-            self.iconbitmap("icon.ico")
+            from PIL import Image, ImageTk
+            img = Image.open("icon.ico")
+            photo = ImageTk.PhotoImage(img)
+            self.wm_iconphoto(True, photo)
+            self._icon = photo  # keep reference so it doesn't get garbage collected
         except:
-            pass  # if icon file missing, just skip
+            pass
 
         self._build_ui()
+        self._build_ui()
+        self._refresh_tree()
+        self.after(200, lambda: self.wm_iconbitmap("icon.ico"))  # ← add this
         self._refresh_tree()
 
     

@@ -143,7 +143,7 @@ class Filesystem:
         self._mkfile(user, "script.sh",   "rwxr-xr-x",
                      "#!/bin/bash\necho 'Hello Filesystem!'\n")
 
-        self._mkfile(etc,  "hostname",    "rw-r--r--", "mycomputer\n")
+        self._mkfile(etc,  "hostname",    "rw-r--r--", "Nero 🦥\n")
         self._mkfile(etc,  "passwd",      "rw-r--r--",
                      "root:x:0:0:/root:/bin/bash\n"
                      "user:x:1000:1000:/home/user:/bin/bash\n")
